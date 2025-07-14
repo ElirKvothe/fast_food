@@ -8,6 +8,8 @@ import { SafeAreaView } from "react-native-safe-area-context";
 import cn from "clsx"
 import MenuCart from "@/components/MenuCart";
 import { MenuItem } from "@/type";
+import SearchBar from "@/components/SearchBar";
+import Filter from "@/components/Filter";
 
 const Search = () => {
   const { category, query } = useLocalSearchParams<{
@@ -53,9 +55,9 @@ const Search = () => {
               <CartButton />
             </View>
             
-            <Text>Search Input</Text>
+            <SearchBar />
 
-            <Text>Filter</Text>
+            <Filter categories={categories!}/>
           </View>
         )}
         ListEmptyComponent={() => !loading && <Text>No Results</Text>}
